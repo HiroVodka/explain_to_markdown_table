@@ -17,8 +17,8 @@ module ActiveRecord
         msg << connection.explain(sql, binds)
       end.yield_self do |s|
         break s unless markdown
-        binding.irb
-        s.join("\n").split(/\R/).each_slice(2).map(&:first).insert(2, "|-|-|-|-|-|-|-|-|-|-|")
+
+        s.join("\n").split(/\R/).each_slice(2).map(&:first).insert(2, "|-|-|-|-|-|-|-|-|-|-|-|-|")
       end.join("\n")
 
       def str.inspect
